@@ -27,3 +27,12 @@ pip install protobuf grpcio-tools
 cd protobufs
 protoc --experimental_allow_proto3_optional --plugin=protoc-gen-nanopb=../.pio/libdeps/station-g2/Nanopb/generator/protoc-gen-nanopb --nanopb_out="-S.cpp
   -v:../src/mesh/generated/" -I=../protobufs meshtastic/module_config.proto
+
+## Git
+
+keep my main clean.
+Pull from fork.
+Push my branch changes.
+mer main to my branch
+
+`git submodule update --init --recursive`
