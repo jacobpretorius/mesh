@@ -88,11 +88,15 @@ meshtastic_MeshPacket *NodeInfoModule::allocReply()
             u.public_key.size = 0;
         }
         // Coerce unmessagable for Repeater role
-        if (u.role == meshtastic_Config_DeviceConfig_Role_REPEATER) {
-            u.has_is_unmessagable = true;
-            u.is_unmessagable = true;
-        }
+        // if (u.role == meshtastic_Config_DeviceConfig_Role_REPEATER) {
+        //     u.has_is_unmessagable = true;
+        //     u.is_unmessagable = true;
+        // }
 
+        // I'm unmessageble here always
+        u.has_is_unmessagable = true;
+        u.is_unmessagable = true;
+        
         LOG_INFO("Send owner %s/%s/%s", u.id, u.long_name, u.short_name);
         lastSentToMesh = millis();
         return allocDataProtobuf(u);
